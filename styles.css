@@ -3,11 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+html{
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 .name{
     margin: 7vh;
     font-size: 5vh;
     font-weight: bold;
-    color: #000;
+    color: hsl(72, 25%, 49%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,7 +22,6 @@
     grid-template-columns: repeat(3, .1fr);
     grid-template-rows: repeat(3, .1fr);
     width: 50vh;
-    height: 50vh;
     margin: 5vh auto;
     align-items: center;
     justify-content: center;
@@ -41,4 +45,61 @@
 
 .Winner{
     background-color: rgb(16, 99, 71);
+}
+
+.body{
+    background-color: #fff;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.settings{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5vh;
+    row-gap: 2vh;
+}
+
+#status{
+    font-size: 10vh;
+    font-weight: bold;
+    color: #000;
+}
+
+#reset{
+  background-color: hsl(72, 25%, 49%);
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 60px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#reset:hover,
+#reset:focus {
+  background-color: #F082AC;
 }

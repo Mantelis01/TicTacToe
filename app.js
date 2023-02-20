@@ -1,5 +1,9 @@
 const game = new Game();
 game.start();
+document.querySelector('#reset').addEventListener('click', function(){
+    window.location.reload();
+    return false;
+  });
 
 function Game() {
     const board = new Board();
@@ -57,14 +61,19 @@ function Board() {
                 winner = true;
                 winningCombo.forEach((index) => {
                     positions[index].className += ' Winner';
+                    console.log(index);
                 });
+                setTimeout(function(){
+                document.getElementById('status').innerHTML+=`x Won!`;
+                }, 50); 
             }
-        })
+        });
         return winner;
     }
 }
 
 function HumanPlayer(board) {
+    this.name = "You";
     this.takeTurn = function () {
         board.position.forEach(el => el.addEventListener('click', handleTurnTaken));
     }
@@ -76,7 +85,7 @@ function HumanPlayer(board) {
 }
 
 function ComputerPlayer(board) {
-
+    this.name = 'Computer'
     this.takeTurn = function () {
         const availablePositions = board.position.filter((p) => p.innerText === '')
         const move = Math.floor(Math.random() * availablePositions.length)
