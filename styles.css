@@ -27,5 +27,13 @@
     border: 1px solid #000;
     font-size: 5vh;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.square:hover{
+    background-color: rgba(110, 110, 110, 0.486);
+    color: #fff;
     cursor: pointer;
 }
